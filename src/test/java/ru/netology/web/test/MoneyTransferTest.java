@@ -1,20 +1,20 @@
-package ru.netology.web;
+package ru.netology.web.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.web.page.DashboardPage;
+import ru.netology.web.page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.netology.web.DataHelper.*;
+import static ru.netology.web.data.DataHelper.*;
 
 public class MoneyTransferTest {
-
-   DashboardPage dashboardPage;
-     CardInfo firstCardInfo;
+    DashboardPage dashboardPage;
+    CardInfo firstCardInfo;
     CardInfo secondCardInfo;
     int firstCardBalance;
     int secondCardBalance;
-
 
     @BeforeEach
     void setup() {
@@ -27,7 +27,6 @@ public class MoneyTransferTest {
         secondCardInfo = getSecondCardInfo();
         firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);
         secondCardBalance = dashboardPage.getCardBalance(secondCardInfo);
-
     }
 
     @Test

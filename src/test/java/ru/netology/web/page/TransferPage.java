@@ -1,6 +1,7 @@
-package ru.netology.web;
+package ru.netology.web.page;
 
 import com.codeborne.selenide.SelenideElement;
+import ru.netology.web.data.DataHelper;
 
 import java.time.Duration;
 
@@ -21,8 +22,8 @@ public class TransferPage {
     }
 
     public DashboardPage makeValidTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
-       makeTransfer(amountToTransfer, cardInfo);
-       return new DashboardPage();
+        makeTransfer(amountToTransfer, cardInfo);
+        return new DashboardPage();
     }
 
     public void makeTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
@@ -31,8 +32,7 @@ public class TransferPage {
         transferButton.click();
     }
 
-        public void findErrorMessage(String expectedText) {
-            errorMessage.shouldHave(text(expectedText), Duration.ofSeconds(15)).shouldBe(visible);
-        }
+    public void findErrorMessage(String expectedText) {
+        errorMessage.shouldHave(text(expectedText), Duration.ofSeconds(15)).shouldBe(visible);
     }
-
+}
