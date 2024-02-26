@@ -28,11 +28,10 @@ public class DataHelper {
 
     public static int generateValidAmount(int balance) {
 
-        return new Random().nextInt(Math.abs(balance));
+        return new Random().nextInt(Math.abs(balance)) + 1;
     }
 
     public static int generateInvalidAmount(int balance) {
-
         return Math.abs(balance) + new Random().nextInt(10000);
     }
 
